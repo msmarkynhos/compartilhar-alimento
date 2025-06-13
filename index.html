@@ -24,6 +24,18 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
+
+        /* --- CSS PARA ANIMAÇÃO --- */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -79,7 +91,8 @@
     <!-- Stats Section -->
     <section class="bg-green-50 py-10">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl mx-auto">
+            <!-- ANIMAÇÃO: Classe para os elementos que vão aparecer -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center max-w-4xl mx-auto fade-in-element">
                 <div class="p-4">
                     <h3 class="text-3xl font-bold text-green-600">1,3 Bilhão</h3>
                     <p class="text-gray-700">de toneladas de alimentos são desperdiçados por ano no mundo.</p>
@@ -95,9 +108,10 @@
     <!-- How It Works -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Como Funciona</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 fade-in-element">Como Funciona</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="feature-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                <!-- ANIMAÇÃO: Classe para os elementos que vão aparecer -->
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300 fade-in-element">
                     <div class="text-center mb-4">
                         <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
                             <i class="fas fa-edit text-green-600 text-2xl"></i>
@@ -106,7 +120,7 @@
                     <h3 class="text-xl font-bold text-center mb-3 text-gray-800">1. Cadastre a doação</h3>
                     <p class="text-gray-600 text-center">Doadores informam os alimentos disponíveis, quantidade, validade e localização.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300 fade-in-element" style="transition-delay: 150ms;">
                     <div class="text-center mb-4">
                         <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
                             <i class="fas fa-search text-orange-500 text-2xl"></i>
@@ -115,7 +129,7 @@
                     <h3 class="text-xl font-bold text-center mb-3 text-gray-800">2. Encontre doações</h3>
                     <p class="text-gray-600 text-center">Instituições ou voluntários buscam doações próximas a elas na plataforma.</p>
                 </div>
-                <div class="feature-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                <div class="feature-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300 fade-in-element" style="transition-delay: 300ms;">
                     <div class="text-center mb-4">
                         <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto">
                             <i class="fas fa-truck text-blue-500 text-2xl"></i>
@@ -130,7 +144,7 @@
 
     <!-- Donate Section -->
     <section id="donate" class="py-16 bg-green-50">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 fade-in-element">
             <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Doe Alimentos</h2>
             <p class="text-center mb-12 text-gray-600 max-w-2xl mx-auto">Ajude a combater o desperdício de alimentos e a fome na sua comunidade. Seja um restaurante, mercado ou pessoa física, sua doação faz a diferença.</p>
             
@@ -227,7 +241,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-16 bg-white fade-in-element">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Sobre o Projeto</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -258,7 +272,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-green-600 text-white">
+    <section id="contact" class="py-16 bg-green-600 text-white fade-in-element">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">Entre em Contato</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -311,7 +325,7 @@
                         <div class="space-y-3">
                             <div class="flex items-start">
                                 <i class="fas fa-envelope mt-1 mr-3"></i>
-                                <span>contato@mesacheia.org.br</span>
+                                <span>contato.mesacheia.projeto@gmail.com</span>
                             </div>
                         </div>
                     </div>
@@ -328,7 +342,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <div class="flex items-center mb-4">
                         <i class="fas fa-leaf text-2xl text-green-400 mr-2"></i>
@@ -343,14 +357,6 @@
                         <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre o Projeto</a></li>
                         <li><a href="#donate" class="text-gray-400 hover:text-white transition">Doar Alimentos</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-4">Documentos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de Uso</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidade</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
@@ -448,6 +454,30 @@
     </div>
 
     <script>
+        // --- SCRIPT PARA ANIMAÇÃO DE SCROLL ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Ativa quando 10% do elemento está visível
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Para a animação não repetir
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('.fade-in-element');
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -464,14 +494,14 @@
         const loginModal = document.getElementById('loginModal');
         const closeLoginModal = document.getElementById('closeLoginModal');
         
-        // This is a simulation, so the login modal will open for demonstration.
-        document.querySelectorAll('a[href="#donate"], #mobile-menu button, .bg-orange-500.text-white, .bg-green-600.text-white').forEach(link => {
+        document.querySelectorAll('a[href="#donate"], #mobile-menu button, .bg-orange-500.text-white, .bg-green-600.text-white, button.bg-orange-500').forEach(link => {
             link.addEventListener('click', function(e) {
-                if (link.getAttribute('href') && (link.getAttribute('href').startsWith('#'))) {
-                     if (link.getAttribute('href') === '#home' || link.getAttribute('href') === '#about' || link.getAttribute('href') === '#contact') {
-                         return; // Allow smooth scroll for these links
-                     }
+                if (this.getAttribute('href') === '#contact' && this.textContent.trim() === 'Contato') {
+                    return; 
                 }
+                 if (this.getAttribute('href') === '#home' || this.getAttribute('href') === '#about') {
+                     return; 
+                 }
                 e.preventDefault();
                 loginModal.classList.remove('hidden');
                 window.scrollTo(0, 0); 
